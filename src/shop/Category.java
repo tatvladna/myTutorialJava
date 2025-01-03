@@ -33,6 +33,15 @@ public class Category {
         return result;
     }
 
+    public String getCategoryForProduct(String product) {
+        for (Map.Entry<String, List<String>> entry : categories.entrySet()) {
+            if (entry.getValue().contains(product)) {
+                return entry.getKey();
+            }
+        }
+        return "Неизвестная категория";
+    }
+
     public static void main(String[] args) {
         Category category = new Category();
 //        category.displayCategories();
